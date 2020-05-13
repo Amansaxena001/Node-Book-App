@@ -1,0 +1,21 @@
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="jumbotron">
+    <h1 class="display-4">New Author</h1>
+
+        <form action="/authors" method="POST">     
+          <div class="form-group">
+          <label for="exampleInputEmail1">Name</label>
+          <input type="name" class="form-control" name="name"  aria-describedby="emailHelp"value="<%= author.name %>">
+        </div>
+        <a class="btn btn-primary" href="/authors" role="button">Cancel</a>
+        <button type="submit" class="btn btn-primary">Create</button>
+      </form>
+ 
+ 
+  </div>
+</body>
