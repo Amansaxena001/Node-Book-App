@@ -1,0 +1,28 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Search Books</h1>
+        <form action="/books" method="GET">      
+             <label for="exampleInputEmail1">Title</label>
+          <input type="text" class="form-control" name="title  aria-describedby="emailHelp" value="<%= searchOptions.title%>"><br>
+          <label for="exampleInputEmail1">Publish After</label>
+          <input type="date" class="form-control" name="publishedAfter"  aria-describedby="emailHelp" value="<%= searchOptions.publishedAfter%>"><br>
+          <label for="exampleInputEmail1">Published Before</label>
+          <input type="date" class="form-control" name="publishedBefore"  aria-describedby="emailHelp" value="<%= searchOptions.publishedBefore%>"><br>
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+ 
+     
+     <br>
+     <div>
+     <% books.forEach(book=> { %>
+      <img height="350" width="350" src="<%=book.coverImg %>"">
+    <% }) %>
+  </div>
+
+
+    </div>
+    </body>

@@ -7,6 +7,8 @@ const app=express()
 const expressLayouts=require('express-ejs-layouts')
 const indexRoute=require('./routes/index')
 const authorRoute=require('./routes/authors')
+const booksRoute=require('./routes/books')
+
 const bodyParser=require('body-parser')
 
 
@@ -30,6 +32,7 @@ app.use(express.static('public'))
 app.use('/',indexRoute)
 app.use('/authors',authorRoute)
 // app.use('/authors/new',authorRouter)
+app.use('/books',booksRoute)
 
 
 app.listen(process.env.PORT || 3002)

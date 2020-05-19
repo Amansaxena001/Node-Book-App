@@ -7,15 +7,16 @@
         <h1 class="display-4">Search Author</h1>
         <form action="/authors" method="GET">      
              <label for="exampleInputEmail1">Name</label>
-          <input type="text" class="form-control" name="name"  aria-describedby="emailHelp" value="<%= searchOpt.name %>">
+          <input type="text" class="form-control" name="name"  aria-describedby="emailHelp" value="<%= searchOptions.name %>"><br>
           <button type="submit" class="btn btn-primary">Search</button>
         </form>
  
      
      <br>
      <% authors.forEach(author => { %>
-        <div><% author.name%></div>
-         
-     <%})%>
-      </div>
+      <div><%= author.name %></div>
+    <% }) %>
+
+
+    </div>
     </body>

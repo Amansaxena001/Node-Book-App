@@ -3,23 +3,21 @@ const router =express.Router()
 const Author =require('../models/author')
 
 //All authors route
-router.get('/',async(req,res)=>{
-    let searchOpt={}
-    if(req.query.name!=null && req.query.name!==''){
-        searchOpt.name=new RegExp(req.query.name,'i')//i means case insensitive
-    }                   //get request sends data as a query
-    try{
-    const authors=await Author.find({searchOpt})
-    res.render('authors/index',{
-        authors:authors,
-        searchOpt:req.query})
-
-    }catch{
-        res.redirect('/')
-
+router.get('/', async (req, res) => {
+    let searchOptions = {}
+    if (req.query.name != null && req.query.name !== '') {
+      searchOptions.name = new RegExp(req.query.name, 'i')
     }
-})
-
+    try {
+      const authors = await Author.find(searchOptions)
+      res.render('authors/index', {
+        authors: authors,
+        searchOptions: req.query
+      })
+    } catch {
+      res.redirect('/')
+    }
+  })
 
 //New author route
 router.get('/new',(req,res)=>{

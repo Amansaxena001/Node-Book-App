@@ -1,1 +1,9 @@
-EJS WORKING
+<center>
+    <h1>Recently Added</h1>
+</center>
+
+<div>
+    <% books.forEach(book=> { %>
+     <img height="350" width="350" src="<%=book.coverImg %>">
+   <% }) %>
+ </div>
